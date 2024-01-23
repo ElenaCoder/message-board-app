@@ -1,0 +1,31 @@
+.channel-list {
+    padding: 10px;
+    width: 150px;
+    background-color: #1f2322;
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+  }
+  
+  .channel-list h2 {
+    font-size: 18px;
+    margin-bottom: 8px;
+    color: #efefef;
+  }
+  
+  .channel-list ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .channel-list li {
+    cursor: pointer;
+    padding: 5px;
+    margin-bottom: 5px;
+    background-color: #f0f0f0;
+    border-radius: 4px;
+  }
+  
+  .channel-list li:hover {
+    background-color: #9b9999;
+    color: #efefef;
+  }
