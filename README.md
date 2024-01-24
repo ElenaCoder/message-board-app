@@ -8,7 +8,7 @@ This is a prototype message board application for in-house use. The application 
 
 Explore a sneak peek of this project with this animated GIF showcasing key features and the user interface.
 
-![UI project GIF](./public/message-board-app.gif)
+![UI project GIF](./client/public/message-board-app.gif)
 
 ### Installation
 
