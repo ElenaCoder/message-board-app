@@ -9,7 +9,7 @@ const MessageList = ({ selectedChannel, messages, onAddMessage }) => {
     const fetchMessages = async () => {
       if (selectedChannel && !messages[selectedChannel]) {
         try {
-          const response = await axios.get(`http://localhost:5000/api/messages/${selectedChannel}`);
+          const response = await axios.get(`http://localhost:5000/messages/${selectedChannel}`);
           const newMessages = response.data;
 
           // Update local state with new messages for the selected channel

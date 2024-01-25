@@ -18,7 +18,7 @@ function App() {
 
     useEffect(() => {
         axios
-            .get('http://localhost:5000/api/channels')
+            .get('http://localhost:5000/channels')
             .then((response) => {
                 setBackendData(response.data);
                 setReady(true);

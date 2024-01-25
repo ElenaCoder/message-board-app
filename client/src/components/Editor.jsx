@@ -15,7 +15,7 @@ const Editor = ({ selectedChannel, onAddMessage }) => {
         try {
             // Send the new message to the server
             await axios.post(
-                `http://localhost:5000/api/messages/${selectedChannel}`,
+                `http://localhost:5000/messages/${selectedChannel}`,
                 {
                     text: message,
                 },

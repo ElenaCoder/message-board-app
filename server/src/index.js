@@ -9,8 +9,8 @@ const messagesRouter = require('./routes/messages');
 app.use(cors());
 
 
-app.use('/api/channels', channelsRouter);
-app.use('/api/messages', messagesRouter);
+app.use('/channels', channelsRouter);
+app.use('/messages', messagesRouter);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
