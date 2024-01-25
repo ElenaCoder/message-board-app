@@ -57,6 +57,7 @@ Explore a sneak peek of this project with this animated GIF showcasing key featu
 
 - [x] Editing messages is not required, only creation.
 - [-] Upon submitting a message to a channel, that message is available for other users.
+
   (The 'Real-time Message Update' feature is not currently implemented. I found that state changes within a component are isolated to each browser tab. It means that when you open the app in different tabs, it doesn't automatically update messages between them. Making this work needs some advanced techniques like WebSockets or using services like Firebase. I didn't get to implement it this time, but I learned how it could be done in the future.)
 - [x] The submitting user sees the message in the message list immediately before refreshing from the backend.
 - [x] No error handling is required.
@@ -65,7 +66,8 @@ Explore a sneak peek of this project with this animated GIF showcasing key featu
 
 - [x] Channel and message storage is an in-memory database.
 - [-] On server start, storage is populated with a fixed set of empty channels.
-      (It was decided to populate channels with some messages for the sake of demonstration purposes.)
+
+(It was decided to populate channels with some messages for the sake of demonstration purposes.)
 
 ##### API Endpoints
 
