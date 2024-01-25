@@ -11,9 +11,10 @@ import Loader from './components/Loader';
 function App() {
     // Main app component logic here
 
-    const [channelsBackendData, setBackendData] = useState([]);
+    const [channels, setBackendData] = useState([]);
     const [isReady, setReady] = useState(false);
     const [selectedChannel, setSelectedChannel] = useState('');
+    const [messages, setMessages] = useState({});
 
     useEffect(() => {
         axios
@@ -31,17 +32,45 @@ function App() {
         setSelectedChannel(channel.toLowerCase());
     };
 
+    // Callback function to add a new message to the local state
+    const onAddMessage = (channel, newMessages) => {
+        const formattedMessages = Array.isArray(newMessages)
+            ? newMessages
+            : [{ text: newMessages }];
+
+        setMessages((prevMessages) => ({
+            ...prevMessages,
+            [channel]: Array.isArray(prevMessages[channel])
+                ? [...prevMessages[channel], ...formattedMessages]
+                : [...formattedMessages],
+        }));
+    };
+
     return (
         <div className='app-container'>
             {isReady ? (
                 <div className='app-content'>
                     <ChannelList
-                        channels={channelsBackendData}
+                        channels={channels}
                         onSelectChannel={onSelectChannel}
+                        selectedChannel={selectedChannel}
                     />
                     <div className='messages-container'>
-                        <MessageList selectedChannel={selectedChannel} />
-                        <Editor selectedChannel={selectedChannel} />
+                        <MessageList
+                            selectedChannel={selectedChannel}
+                            messages={messages}
+                            onAddMessage={onAddMessage}
+                        />
+                        <div
+                            className={`editor-wrapper ${
+                                selectedChannel ? 'visible' : ''
+                            }`}
+                        >
+                            <Editor
+                                selectedChannel={selectedChannel}
+                                onAddMessage={onAddMessage}
+                            />
+                        </div>
                     </div>
                 </div>
             ) : (
