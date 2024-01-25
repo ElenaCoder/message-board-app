@@ -27,6 +27,7 @@
     padding: 8px;
     border: 1px solid #ddd;
     border-radius: 4px;
+    word-wrap: break-word;
 }
 
 .message-list li:hover {
