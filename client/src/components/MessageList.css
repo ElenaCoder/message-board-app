@@ -1,6 +1,6 @@
 .message-list {
     padding: 0 10px 10px 10px;
-    max-height: 480px;
+    max-height: 500px;
     overflow-y: auto;
 }
 
